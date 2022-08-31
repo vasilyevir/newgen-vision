@@ -41,7 +41,7 @@ export default new Vuex.Store({
                 }
             }
         },
-        startNewTrainer({dispatch, commit}) {
+        getInformationToTrainer({dispatch, commit}) {
             document.addEventListener('keydown', event => dispatch('keydownListener', event.key));
             dispatch('endTime');
             dispatch('clearStatistics');
@@ -49,6 +49,9 @@ export default new Vuex.Store({
             commit('updateTime', 0)
             commit('setStatusTimer', false);
             commit('setIsTrainerEnd', false)
+        },
+        startNewTrainer() {
+            window.location.reload();
         },
         startTime({commit, state}) {
             commit('updateTimer',

@@ -2,9 +2,8 @@
   <div id="app" class="root">
     <input-trainer></input-trainer>
     <typing-statistics></typing-statistics>
-    <div class="popup-winner" v-if="getIsTrainerEnd">
-      Game Over!
-    </div>
+    <popup-results v-if="getIsTrainerEnd"></popup-results>
+
   </div>
 </template>
 
@@ -12,18 +11,19 @@
 import {mapActions, mapGetters} from "vuex";
 import InputTrainer from "@/components/InputTrainer";
 import TypingStatistics from "@/components/TypingStatistics";
+import PopupResults from "@/components/PopupResults";
 
 export default {
   name: 'App',
-  components: {TypingStatistics, InputTrainer},
+  components: {PopupResults, TypingStatistics, InputTrainer},
   computed: {
     ...mapGetters(["getIsTrainerEnd"]),
   },
   methods: {
-    ...mapActions(["fetchTexts", "endTime", "startNewTrainer"]),
+    ...mapActions(["fetchTexts", "endTime", "getInformationToTrainer"]),
   },
   created() {
-    this.startNewTrainer();
+    this.getInformationToTrainer();
   },
   beforeDestroy() {
     this.endTime();
@@ -32,7 +32,9 @@ export default {
 </script>
 
 <style lang="scss">
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600&display=swap');
+@import url(
+  'https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600&display=swap'
+);
 html, body {margin: 0; padding: 0}
 #app {
   font-family: 'Source Code Pro', monospace;
@@ -52,8 +54,5 @@ html, body {margin: 0; padding: 0}
   margin: 0;
   padding: 100px 200px;
   gap: 40px;
-}
-.active {
-  color: green;
 }
 </style>

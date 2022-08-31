@@ -45,9 +45,6 @@ export default {
         accuracy: 1000,
     },
     getters: {
-        showingAmountErrors(state) {
-            return state.amountErrorEnter;
-        },
         showingIndexEnterSymbol(state) {
             return state.indexEnterSymbol;
         },
