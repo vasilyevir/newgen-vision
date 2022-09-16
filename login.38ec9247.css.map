@@ -1,0 +1,1 @@
+{"mappings":"AAAA","sources":["src/styles/style.scss"],"sourcesContent":["body {\n  background-color: aliceblue;\n  width: 100vw;\n  min-height: 100vh;\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n}"],"names":[],"version":3,"file":"login.38ec9247.css.map","sourceRoot":"/__parcel_source_root/"}
