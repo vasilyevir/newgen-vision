@@ -1,24 +1,15 @@
 # new-division
 
-## Project setup
-```
-npm install
-```
+## Тренажер слепой печати
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+Данный проект написан в рамках тестового задания в компанию Newgen Vision
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## Стек 
 
-### Lints and fixes files
-```
-npm run lint
-```
+Vue@2
+Vuex@3
+Sass@1.54.5
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Ссылка на готовый проект
+
+https://vasilyevir.github.io/newgen-vision/
